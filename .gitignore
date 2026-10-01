@@ -1,0 +1,16 @@
+/records/
+/*.pdf
+/*.zip
+/실행방법.txt
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+/assets/dua-courses.png
+/assets/dua-search.png
+/assets/dua-wireframe.png
+/assets/memory-letter-paper.png
+/assets/memory-login.png
+/assets/memory-receipt-paper.png
+/assets/vendor/ScrollTrigger.min.js

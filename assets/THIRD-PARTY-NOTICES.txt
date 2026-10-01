@@ -1,0 +1,24 @@
+이 포트폴리오는 다음 글꼴과 GSAP의 로컬 사본을 사용합니다.
+
+GSAP 3.13.0
+Copyright GreenSock / Webflow. 배포 파일 상단의 저작권 및 라이선스 고지를 보존했습니다.
+https://gsap.com/standard-license/
+출처: https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js
+
+Cabinet Grotesk (400, 500, 700, 800)
+Indian Type Foundry / Fontshare
+https://www.fontshare.com/fonts/cabinet-grotesk
+https://www.fontshare.com/licenses
+출처: Fontshare CSS API에 명시된 WOFF2 파일. 서체 파일은 변경하지 않았습니다.
+https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap
+
+Pretendard Variable 1.3.9
+Copyright (c) 2021 Kil Hyung-jin (Orion Cactus)
+SIL Open Font License 1.1. 전체 라이선스: fonts/Pretendard-LICENSE.txt
+https://github.com/orioncactus/pretendard
+출처: https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/woff2/PretendardVariable.woff2
+
+디자인 참고
+Figma UI 디자인 원칙: https://www.figma.com/ko-kr/resource-library/ui-design-principles/
+Spencer Gabor: https://spencergabor.work/
+타이포그래피, 정보 위계와 정렬을 참고했습니다. 해당 사이트의 작품·소스는 복제하지 않았습니다.
