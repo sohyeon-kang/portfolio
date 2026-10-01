@@ -23,10 +23,24 @@ const letterTouches = new Map();
 const letterFeedbackTimers = new Map();
 const minimumTouchFeedback = 160;
 
-function clearLetterFeedback(letter) {
+function animateLetter(letter, index, duration = 0.45) {
+  if (!gsapAvailable || motionOff) return;
+  gsap.to(letter,{y:-11,rotation:index%2===0?-5:5,scaleY:1.08,duration,ease:'back.out(2)',overwrite:true});
+}
+function restoreLetter(letter, immediate = false) {
+  if (!gsapAvailable) return;
+  if (immediate || motionOff) {
+    gsap.killTweensOf(letter);
+    gsap.set(letter, {clearProps:'transform'});
+    return;
+  }
+  gsap.to(letter,{y:0,rotation:0,scaleY:1,duration:0.55,ease:'elastic.out(1,0.65)',overwrite:true});
+}
+function clearLetterFeedback(letter, immediate = false) {
   clearTimeout(letterFeedbackTimers.get(letter));
   letterFeedbackTimers.delete(letter);
   letter.classList.remove('is-touched');
+  restoreLetter(letter, immediate);
 }
 function finishLetterTouch(pointerId, cancelled = false) {
   const touch = letterTouches.get(pointerId);
@@ -35,22 +49,24 @@ function finishLetterTouch(pointerId, cancelled = false) {
   if ([...letterTouches.values()].some(active => active.letter === touch.letter)) return;
   // 짧게 탭해도 색을 확인할 수 있게 하되, 스크롤이나 취소에는 즉시 정리합니다.
   const remaining = cancelled ? 0 : Math.max(0, minimumTouchFeedback - (performance.now() - touch.started));
-  if (!remaining) clearLetterFeedback(touch.letter);
+  if (!remaining) clearLetterFeedback(touch.letter, cancelled);
   else letterFeedbackTimers.set(touch.letter, setTimeout(() => clearLetterFeedback(touch.letter), remaining));
 }
 function resetLetterTouches() {
-  letterTouches.forEach(touch => clearLetterFeedback(touch.letter));
+  letterTouches.forEach(touch => clearLetterFeedback(touch.letter, true));
   letterTouches.clear();
-  [...letterFeedbackTimers.keys()].forEach(clearLetterFeedback);
+  [...letterFeedbackTimers.keys()].forEach(letter => clearLetterFeedback(letter, true));
+  // 손을 뗀 뒤 진행 중인 복귀 애니메이션도 화면 이탈 시 정리합니다.
+  document.querySelectorAll('.name-letter').forEach(letter => restoreLetter(letter, true));
 }
 document.querySelectorAll('.name-letter').forEach((letter,index) => {
   letter.addEventListener('pointerenter', event => {
-    if (event.pointerType !== 'mouse' || !gsapAvailable || motionOff) return;
-    gsap.to(letter,{y:-11,rotation:index%2===0?-5:5,scaleY:1.08,duration:0.45,ease:'back.out(2)',overwrite:true});
+    if (event.pointerType !== 'mouse') return;
+    animateLetter(letter, index);
   });
   letter.addEventListener('pointerleave', event => {
-    if (event.pointerType !== 'mouse' || !gsapAvailable) return;
-    gsap.to(letter,{y:0,rotation:0,scaleY:1,duration:motionOff?0:0.55,ease:'elastic.out(1,0.65)',overwrite:true});
+    if (event.pointerType !== 'mouse') return;
+    restoreLetter(letter);
   });
   letter.addEventListener('pointerdown', event => {
     if (event.pointerType === 'mouse') return;
@@ -58,6 +74,7 @@ document.querySelectorAll('.name-letter').forEach((letter,index) => {
     letterFeedbackTimers.delete(letter);
     letterTouches.set(event.pointerId, {letter, started:performance.now(), x:event.clientX, y:event.clientY});
     letter.classList.add('is-touched');
+    animateLetter(letter, index, 0.18);
   }, {passive:true});
 });
 window.addEventListener('pointerup', event => finishLetterTouch(event.pointerId), {passive:true});
@@ -68,6 +85,7 @@ window.addEventListener('pointermove', event => {
 }, {passive:true});
 window.addEventListener('scroll', resetLetterTouches, {passive:true});
 window.addEventListener('blur', resetLetterTouches);
+window.addEventListener('pagehide', resetLetterTouches);
 document.addEventListener('visibilitychange', () => {if (document.hidden) resetLetterTouches();});
 
 const navLinks=[...document.querySelectorAll('.site-header nav a')];
@@ -84,6 +102,7 @@ window.addEventListener('scroll',()=>{if(!navQueued){navQueued=true;requestAnima
 window.addEventListener('resize',refreshScroll);
 window.addEventListener('load',refreshScroll);
 window.addEventListener('pageshow', () => {
+  resetLetterTouches();
   // 페이지 안의 메뉴 이동은 유지하고, 진입·새로고침·복귀 시에만 첫 화면으로 이동합니다.
   if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
   window.scrollTo({top:0,left:0,behavior:'instant'});
