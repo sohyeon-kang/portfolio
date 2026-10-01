@@ -102,7 +102,7 @@ h1{font:800 clamp(96px,18vw,252px)/1 var(--display);letter-spacing:-.065em;white
 .case-heading h2{font:700 clamp(82px,9vw,128px)/1.1 var(--display);color:var(--project-ink);letter-spacing:-.055em}
 #memory .case-heading h2{font-family:var(--sans);font-weight:650;font-size:clamp(64px,7.5vw,104px);letter-spacing:-.06em}
 .case-subtitle{font-size:26px;line-height:1.5;margin-top:22px;letter-spacing:-.035em}
-.source-link{display:inline-flex;align-items:center;gap:16px;font-size:16px;min-height:44px;margin-top:20px;text-decoration:underline;text-underline-offset:6px}
+.source-link{display:inline-flex;align-items:center;gap:16px;font-size:16px;min-height:44px;margin-top:20px;text-decoration:none;border-bottom:1px solid currentColor}
 .source-link>span[aria-hidden]{font-size:23px}
 .project-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0;padding:30px 0;border-bottom:1px solid var(--line)}
 .project-meta>div{border-left:1px solid var(--line);padding-left:24px}
