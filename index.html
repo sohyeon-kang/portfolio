@@ -3,6 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // 새로 열거나 새로고침할 때 이전 스크롤 위치와 섹션 주소를 복원하지 않습니다.
+    history.scrollRestoration = 'manual';
+    if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
+  </script>
   <meta name="theme-color" content="#fffdf5">
   <meta name="description" content="강소현 · Kang Sohyeon. 기억서랍의 백엔드·서비스 통합과 DUA의 프론트엔드 설계·구현으로 아이디어를 동작하는 웹 서비스로 연결합니다.">
   <title>강소현 · Kang Sohyeon — From idea to service.</title>
@@ -10,7 +15,7 @@
   <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css?v=20261001-section-colors">
   <script src="assets/vendor/gsap.min.js" defer></script>
-  <script src="script.js?v=20261001-copy-refined" defer></script>
+  <script src="script.js?v=20261001-start-at-top" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로 가기</a>

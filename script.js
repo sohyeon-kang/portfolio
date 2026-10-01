@@ -43,5 +43,11 @@ function updateNavigation(){
 window.addEventListener('scroll',()=>{if(!navQueued){navQueued=true;requestAnimationFrame(updateNavigation);}},{passive:true});
 window.addEventListener('resize',refreshScroll);
 window.addEventListener('load',refreshScroll);
+window.addEventListener('pageshow', () => {
+  // 페이지 안의 메뉴 이동은 유지하고, 진입·새로고침·복귀 시에만 첫 화면으로 이동합니다.
+  if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
+  window.scrollTo({top:0,left:0,behavior:'instant'});
+  updateNavigation();
+});
 document.fonts.ready.then(refreshScroll);
 configureMotion();updateNavigation();
