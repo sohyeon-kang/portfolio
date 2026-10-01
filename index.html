@@ -9,19 +9,19 @@
     if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
   </script>
   <meta name="theme-color" content="#fffdf5">
-  <meta name="description" content="강소현 · Kang Sohyeon. 기억서랍의 백엔드·서비스 통합과 DUA의 프론트엔드 설계·구현으로 아이디어를 동작하는 웹 서비스로 연결합니다.">
+  <meta name="description" content="프론트엔드 개발자를 목표로 공부하는 강소현의 포트폴리오입니다. DUA의 화면 개발과 기억서랍의 백엔드·서비스 통합 경험을 소개합니다.">
   <title>강소현 · Kang Sohyeon — From idea to service.</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20261001-final-review">
+  <link rel="stylesheet" href="style.css?v=20261001-frontend-touch">
   <script src="assets/vendor/gsap.min.js" defer></script>
-  <script src="script.js?v=20261001-start-at-top" defer></script>
+  <script src="script.js?v=20261001-frontend-touch" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로 가기</a>
   <header class="site-header">
     <a class="brand" href="#intro" aria-label="강소현 포트폴리오 첫 화면">sohyeon<small>강소현</small></a>
-    <nav aria-label="주 메뉴"><a href="#about">소개</a><a href="#work">프로젝트</a><a href="#links">코드와 기록 <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="주 메뉴"><a href="#about">소개</a><a href="#work">프로젝트</a></nav>
 
   </header>
   <main id="main">
@@ -29,21 +29,21 @@
       <div class="hero-content">
         <h1 id="intro-title" aria-label="강소현, Kang Sohyeon"><span class="name-letter" aria-hidden="true">S</span><span class="name-letter" aria-hidden="true">O</span><span class="name-letter" aria-hidden="true">H</span><span class="name-letter" aria-hidden="true">Y</span><span class="name-letter" aria-hidden="true">E</span><span class="name-letter" aria-hidden="true">O</span><span class="name-letter" aria-hidden="true">N</span></h1>
         <p class="hero-headline">정보컴퓨터공학부 인공지능전공 · 25학번 강소현</p>
-        <p class="hero-summary">웹 서비스의 화면과 서버 개발에 관심이 있습니다.</p>
+        <p class="hero-summary">프론트엔드 개발자를 목표로 공부하고 있습니다.</p>
 
       </div>
       <div class="hero-bottom"><a class="scroll-cue" href="#work">프로젝트 살펴보기 <b aria-hidden="true">↓</b></a></div>
     </section>
 
     <section id="about" class="about-section" aria-labelledby="about-title">
-      <div class="wrap about-layout"><div><h2 id="about-title">From idea<br><em>to service.</em></h2></div><div class="about-copy"><p class="about-lead">프론트엔드와 백엔드를 경험하며, 하나의 서비스를 더 넓게 이해하고 있습니다.</p><p>사용자의 선택이 화면과 서버를 거쳐 결과로 돌아오는 과정을 구현하며 DUA의 프론트엔드에서 시작해 기억서랍의 백엔드와 서비스 통합까지 경험했습니다.</p><div class="experience-grid"><div><span>프론트엔드</span><p>화면 설계·구현과 상태 관리<br>React/Vite 프론트엔드 연동</p></div><div><span>백엔드</span><p>Spring Boot 인증·문서 분석<br>API 통합·예외 처리</p></div><div><span>협업과 검증</span><p>GitHub · API 명세<br>Postman · 통합 흐름 확인</p></div></div></div></div>
+      <div class="wrap about-layout"><div><h2 id="about-title">From idea<br><em>to service.</em></h2></div><div class="about-copy"><p class="about-lead">서버와 데이터의 흐름도 이해하는 프론트엔드 개발자가 되고 싶습니다.</p><p>DUA에서 화면을 만들었고, 기억서랍에서는 백엔드와 서비스 통합을 맡았습니다. 데이터를 저장하고 API로 주고받는 과정을 직접 다뤄본 덕분에, 화면을 만들 때 서버의 응답과 오류 상황까지 함께 생각하게 됐습니다.</p><div class="experience-grid"><div><span>프론트엔드</span><p>화면 설계·구현과 상태 관리<br>React/Vite 프론트엔드 연동</p></div><div><span>백엔드</span><p>Spring Boot 인증·문서 분석<br>API 통합·예외 처리</p></div></div></div></div>
       <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Frontend <i>·</i> Backend <i>·</i> Integration <i>·</i> Collaboration <i>·</i> </span><span>Frontend <i>·</i> Backend <i>·</i> Integration <i>·</i> Collaboration <i>·</i> </span></div></div>
     </section>
 
     <section id="work" class="links-section" aria-labelledby="links-title">
       <div class="wrap" id="links">
         <p class="section-kicker">개발 경험</p>
-        <h2 id="links-title">아이디어가<br><em>코드가 된 과정.</em></h2>
+        <h2 id="links-title">참여한 <em>프로젝트</em></h2>
         <div class="resource-links">
           <a href="#memory"><span>기억서랍<small>영수증·티켓·손편지를 추억 카드로 저장하는 모바일 웹입니다. 문서 분석과 카드 저장·조회가 이어지도록 백엔드와 서비스 통합을 맡았습니다.</small></span><span aria-hidden="true">↗</span></a>
           <a href="#dua"><span>DUA<small>부산 여행 코스 추천과 지하철 이동 안내를 함께 제공하는 서비스입니다. 조건 선택·코스 비교·장소 상세 화면을 설계하고 구현했으며, 승차·환승·출구 안내를 연결하고 있습니다.</small></span><span aria-hidden="true">↗</span></a>
@@ -54,7 +54,7 @@
     <section id="memory" class="case-section" aria-labelledby="memory-title" data-project="memory">
       <div class="wrap">
       <div class="case-heading"><p class="eyebrow">01 / 기억서랍 · 백엔드와 통합</p><div><h2 id="memory-title">기억서랍</h2><p class="case-subtitle">종이의 기록을, 나의 기억으로.</p></div><a class="source-link" href="https://github.com/yerin219/AI-Builder-Sprint" target="_blank" rel="noopener noreferrer">프로젝트 저장소 <span aria-hidden="true">↗</span><span class="sr-only"> (새 탭)</span></a></div>
-      <dl class="project-meta"><div><dt>프로젝트</dt><dd>NEXUS <small>AI Builder Sprint 2026</small></dd></div><div><dt>팀 · 작업 기간</dt><dd>4명 <small>2026.07.29–08.03</small></dd></div><div><dt>나의 역할</dt><dd>백엔드 · 서비스 통합</dd></div><div><dt>현재 결과</dt><dd>로컬 실행 모바일 웹 MVP</dd></div></dl>
+      <dl class="project-meta"><div><dt>프로젝트</dt><dd>NEXUS <small>AI Builder Sprint 2026</small></dd></div><div><dt>팀 · 작업 기간</dt><dd>4명 <small>2026.07.29–08.03</small></dd></div><div><dt>나의 역할</dt><dd>백엔드 · 서비스 통합</dd></div></dl>
       <div class="case-introduction"><h3>사진 한 장을,<br>다시 꺼내 볼 기억으로.</h3><p>영수증·티켓·손편지를 분석하고, 사용자가 확인한 정보와 감정을 추억 카드로 저장하는 서비스입니다. 완성한 카드는 추억 날짜에 따라 연도별 서랍에 모았습니다.</p></div>
       <div class="project-gallery memory-gallery">
 <figure><div class="project-screen memory-screen memory-drawer-screen"><img src="assets/memory-drawers.jpg" alt="추억 날짜에 따라 정리된 기억서랍의 연도별 서랍 목록" loading="lazy"></div><figcaption>01 / 연도별 서랍</figcaption></figure><figure><div class="project-screen memory-screen memory-receipt-screen"><img src="assets/memory-receipt.jpg" alt="날짜와 가게, 구매 항목이 담긴 영수증 형태의 추억 카드" loading="lazy"></div><figcaption>02 / 영수증 카드</figcaption></figure>
@@ -64,12 +64,12 @@
       </div>
       </div>
       <div class="case-details"><div class="wrap">
-      <div class="contribution-grid"><section class="team-contribution"><span class="mini-label">팀</span><h3>종이 기록을 보관하는 모바일 웹</h3><p>4명이 기획과 프론트엔드·백엔드 개발을 나눠 진행했습니다. 문서 분석, 회상 답변, 추억 카드 저장과 서랍 조회를 연결해 모바일 웹 MVP를 만들었습니다.</p></section><section class="my-contribution"><span class="mini-label">개인</span><h3>백엔드 구현과 서비스 통합</h3><ul><li>인증·문서 분류·정보 추출, 사용자 확정값 관리</li><li>카드 저장·조회 연동, 이미지 소유권 검증과 실패 처리</li><li>AI 제목 검증, 카드 배치·표시 방식 개선</li></ul></section></div>
+      <div class="contribution-grid"><section class="team-contribution"><span class="mini-label">팀</span><h3>종이 기록을 보관하는 모바일 웹</h3><p>4명이 기획과 프론트엔드·백엔드 개발을 나눠 진행했습니다. 문서 분석, 회상 답변, 추억 카드 저장과 서랍 조회를 연결해 모바일 웹을 만들었습니다.</p></section><section class="my-contribution"><span class="mini-label">개인</span><h3>백엔드 구현과 서비스 통합</h3><ul><li>인증·문서 분류·정보 추출, 사용자 확정값 관리</li><li>카드 저장·조회 연동, 이미지 소유권 검증과 실패 처리</li><li>AI 제목 검증, 카드 배치·표시 방식 개선</li></ul></section></div>
       <section class="problem-solving" aria-labelledby="memory-problems"><div class="problem-heading"><h3 id="memory-problems">문제와 해결</h3></div>
 <article class="problem-row"><h4><span>01</span>저장은 실패했는데, 파일은 남는 문제</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>카드 저장 중 오류가 나면 업로드한 이미지 파일이 남을 수 있었습니다.</p></div><div><span class="problem-label">해결</span><p>저장 실패 시 잔여 파일을 정리하도록 보완했습니다. 이미지 조회에는 인증·소유권 검증을 연결했습니다.</p></div></div></article><article class="problem-row"><h4><span>02</span>답변을 나열하는 AI 제목</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>회상 제목이 답변을 단순 나열해, 하나의 장면으로 읽히지 않았습니다.</p></div><div><span class="problem-label">해결</span><p>나열형 결과를 검증하고 한 차례 재생성했습니다. 재생성 후에도 부적합하면 직접 입력으로 이어지도록 구성했습니다.</p></div></div></article><article class="problem-row"><h4><span>03</span>한쪽에 몰리는 추억 카드</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>서랍에 카드가 몰리면 개별 기록을 구분하기 어려웠습니다.</p></div><div><span class="problem-label">해결</span><p>기존 카드와 멀리 떨어진 빈 위치를 우선 선택하도록 배치를 변경해, 서랍 전체에 카드를 분산했습니다.</p></div></div></article>
       </section>
-      <div class="project-result"><span class="mini-label">검증 결과</span><p><strong>실제 API로 저장·조회를 확인했습니다.</strong> 당시 통합 기록 기준 백엔드 91개·프론트엔드 27개 테스트를 통과했습니다.</p></div>
-      <p class="scope-note">공개 배포 전 로컬 MVP입니다. Codex를 구현·테스트에 활용했으며, 기능 범위와 수정 기준은 직접 결정했습니다.</p>
+      <div class="project-result"><span class="mini-label">작업 결과</span><p>문서 분석 후 정보를 확인하고 추억 카드로 저장해, 연도별 서랍에서 다시 볼 수 있도록 연결했습니다.</p></div>
+      <section class="project-reflection" aria-labelledby="memory-reflection"><h3 id="memory-reflection">배운 점과 아쉬운 점</h3><p>DUA에서의 경험을 바탕으로 시작 전에 기능을 구체적으로 정리했고, 개발 중 작업이 꼬이는 일을 줄일 수 있었습니다. 시간이 부족해 핵심 기능부터 구현한 뒤 추가 기능을 붙였고, 원하던 기능을 모두 넣어 제출했습니다. 우선순위를 먼저 정하니 마감 부담도 줄었습니다.</p><p>해커톤에서 수상하지는 못했습니다. 다른 팀의 결과물을 보며 기존 서비스와 뚜렷한 차이가 부족했다는 점을 느꼈고, 다음에는 어떤 기능을 넣을지뿐 아니라 이 서비스를 선택할 이유도 먼저 고민해 보려고 합니다.</p></section>
       </div></div>
     </section>
 
@@ -77,7 +77,7 @@
     <section id="dua" class="case-section" aria-labelledby="dua-title" data-project="dua">
       <div class="wrap">
       <div class="case-heading"><p class="eyebrow">02 / DUA · 프론트엔드</p><div><h2 id="dua-title">DUA</h2><p class="case-subtitle">여행 정보를, 하나의 동선으로.</p></div><a class="source-link" href="https://github.com/sohyeon-kang/dua-personal" target="_blank" rel="noopener noreferrer">개인 저장소 <span aria-hidden="true">↗</span><span class="sr-only"> (새 탭)</span></a></div>
-      <dl class="project-meta"><div><dt>함께한 사람</dt><dd>8명 <small>프론트 4 · 백엔드 4</small></dd></div><div><dt>팀 활동 기간</dt><dd>약 3개월</dd></div><div><dt>나의 역할</dt><dd>프론트엔드 · 화면 재설계</dd></div><div><dt>현재 결과</dt><dd>코스 추천·비교·장소 상세<small>지하철 이동 안내 구현 중</small></dd></div></dl>
+      <dl class="project-meta"><div><dt>프로젝트</dt><dd>DUA <small>부산 여행·지하철 이동 안내</small></dd></div><div><dt>팀 · 작업 기간</dt><dd>8명 · 약 3개월 <small>프론트 4 · 백엔드 4</small></dd></div><div><dt>나의 역할</dt><dd>프론트엔드 · 화면 재설계</dd></div></dl>
       <div class="case-introduction"><h3>부산이 처음이어도,<br>지하철로 이어지는 여행.</h3><p>지역·동행·날씨에 맞는 부산 여행 코스와 지하철 이동 안내를 함께 제공하는 서비스입니다. 조건 선택·코스 비교·장소 상세 화면을 구현했으며, 승차·환승·출구 정보를 확인하는 이동 안내를 연결하고 있습니다.</p></div>
       <div class="project-gallery dua-gallery">
         <figure><div class="project-screen"><img src="assets/DUA1.png" alt="지역·동행·날씨·시간대를 선택하는 수정된 DUA 여행 조건 화면" loading="lazy" width="583" height="1125"></div><figcaption>01 / 여행 조건 선택</figcaption></figure>
@@ -88,11 +88,11 @@
       </div>
       <div class="case-details"><div class="wrap">
       <div class="contribution-grid"><section class="team-contribution"><span class="mini-label">팀</span><h3>현장 조사 기반 부산 여행 서비스</h3><p>8명이 기획·답사·초기 설계를 진행했습니다. 장소와 이동 조건을 조사해 여행 코스와 지하철 동선을 함께 안내하는 흐름을 기획하고, 추천 API와 화면·지도를 연결했습니다.</p></section><section class="my-contribution"><span class="mini-label">개인</span><h3>화면 재설계와 탐색 흐름 구현</h3><ul><li>개인 작업본 dua_personal의 와이어프레임·화면 재구현</li><li>검색 조건·추천 결과·선택 코스 저장과 복원</li><li>지하철 이동 안내 화면, 지도 표시와 로딩·빈 결과·오류 화면 구현</li></ul></section></div>
-      <section class="problem-solving" aria-labelledby="dua-problems"><div class="problem-heading"><p class="section-kicker">문제와 해결</p><h3 id="dua-problems">화면을 오가도 탐색이 이어지도록.</h3></div>
+      <section class="problem-solving" aria-labelledby="dua-problems"><div class="problem-heading"><h3 id="dua-problems">문제와 해결</h3></div>
 <article class="problem-row"><h4><span>01</span>화면을 이동하면 사라지는 선택</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>페이지 이동·새로고침으로 조건과 코스가 초기화되면 같은 검색을 반복해야 했습니다.</p></div><div><span class="problem-label">해결</span><p>검색 조건·추천 결과·선택 코스를 sessionStorage에 저장했습니다. 이전 화면으로 돌아와도 선택한 조건과 코스를 이어서 볼 수 있도록 복원했습니다.</p></div></div></article><article class="problem-row"><h4><span>02</span>와이어프레임과 실제 화면의 차이</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>와이어프레임대로 구현한 뒤 실제 화면을 보니, 구성과 정보 배치를 다시 다듬을 필요가 있었습니다.</p></div><div><span class="problem-label">해결</span><p>여행 조건 선택 → 추천 코스 → 지하철 이동 안내 순서로 화면을 다시 구성했습니다. 각 단계에서 필요한 코스와 이동 정보를 확인하도록 배치를 수정했습니다.</p></div></div></article>
       </section>
-      <div class="project-result"><span class="mini-label">구현 범위</span><p><strong>추천·비교·상세 화면과 상태 복원을 구현했습니다.</strong> 지하철 승차·환승·출구 동선 안내는 구현 중입니다.</p></div>
-      <p class="scope-note">현재 지도 연결선·거리는 직선 기준이며, 실제 길찾기는 외부 카카오맵으로 연결합니다.</p>
+      <div class="project-result"><span class="mini-label">작업 결과</span><p>여행 조건 선택부터 추천 코스 비교·장소 상세 확인까지 화면을 연결했고, 화면을 이동해도 선택한 조건과 코스가 유지되도록 했습니다. 지하철 승차·환승·출구 안내는 연결 중이며, 실제 길찾기는 외부 카카오맵으로 이어집니다.</p></div>
+      <section class="project-reflection" aria-labelledby="dua-reflection"><h3 id="dua-reflection">배운 점과 아쉬운 점</h3><p>처음 해보는 팀 프로젝트라 API 명세와 README, 구체적인 와이어프레임을 충분히 정하지 않은 채 시작했습니다. 개발 중 서로 생각한 기능과 화면이 달라 코드가 꼬이는 일을 겪었고, 시작 전에 팀의 의견을 모아 기능과 화면을 명확히 정하는 시간이 필요하다고 느꼈습니다.</p><p>Git으로 작업을 합칠 때 충돌이 나기도 했지만, 직접 사용하면서 점차 익숙해졌습니다. 이 경험을 바탕으로 다음 프로젝트인 기억서랍에서는 개발 전에 기능을 구체적으로 정리했습니다.</p></section>
       </div></div>
     </section>
 

@@ -19,16 +19,56 @@ function configureMotion() {
   }
 }
 reduceMotion.addEventListener('change', configureMotion);
+const letterTouches = new Map();
+const letterFeedbackTimers = new Map();
+const minimumTouchFeedback = 160;
+
+function clearLetterFeedback(letter) {
+  clearTimeout(letterFeedbackTimers.get(letter));
+  letterFeedbackTimers.delete(letter);
+  letter.classList.remove('is-touched');
+}
+function finishLetterTouch(pointerId, cancelled = false) {
+  const touch = letterTouches.get(pointerId);
+  if (!touch) return;
+  letterTouches.delete(pointerId);
+  if ([...letterTouches.values()].some(active => active.letter === touch.letter)) return;
+  // 짧게 탭해도 색을 확인할 수 있게 하되, 스크롤이나 취소에는 즉시 정리합니다.
+  const remaining = cancelled ? 0 : Math.max(0, minimumTouchFeedback - (performance.now() - touch.started));
+  if (!remaining) clearLetterFeedback(touch.letter);
+  else letterFeedbackTimers.set(touch.letter, setTimeout(() => clearLetterFeedback(touch.letter), remaining));
+}
+function resetLetterTouches() {
+  letterTouches.forEach(touch => clearLetterFeedback(touch.letter));
+  letterTouches.clear();
+  [...letterFeedbackTimers.keys()].forEach(clearLetterFeedback);
+}
 document.querySelectorAll('.name-letter').forEach((letter,index) => {
-  letter.addEventListener('pointerenter', () => {
-    if (!gsapAvailable || motionOff) return;
+  letter.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'mouse' || !gsapAvailable || motionOff) return;
     gsap.to(letter,{y:-11,rotation:index%2===0?-5:5,scaleY:1.08,duration:0.45,ease:'back.out(2)',overwrite:true});
   });
-  letter.addEventListener('pointerleave', () => {
-    if (!gsapAvailable) return;
+  letter.addEventListener('pointerleave', event => {
+    if (event.pointerType !== 'mouse' || !gsapAvailable) return;
     gsap.to(letter,{y:0,rotation:0,scaleY:1,duration:motionOff?0:0.55,ease:'elastic.out(1,0.65)',overwrite:true});
   });
+  letter.addEventListener('pointerdown', event => {
+    if (event.pointerType === 'mouse') return;
+    clearTimeout(letterFeedbackTimers.get(letter));
+    letterFeedbackTimers.delete(letter);
+    letterTouches.set(event.pointerId, {letter, started:performance.now(), x:event.clientX, y:event.clientY});
+    letter.classList.add('is-touched');
+  }, {passive:true});
 });
+window.addEventListener('pointerup', event => finishLetterTouch(event.pointerId), {passive:true});
+window.addEventListener('pointercancel', event => finishLetterTouch(event.pointerId, true), {passive:true});
+window.addEventListener('pointermove', event => {
+  const touch = letterTouches.get(event.pointerId);
+  if (touch && Math.hypot(event.clientX - touch.x, event.clientY - touch.y) > 12) finishLetterTouch(event.pointerId, true);
+}, {passive:true});
+window.addEventListener('scroll', resetLetterTouches, {passive:true});
+window.addEventListener('blur', resetLetterTouches);
+document.addEventListener('visibilitychange', () => {if (document.hidden) resetLetterTouches();});
 
 const navLinks=[...document.querySelectorAll('.site-header nav a')];
 const sectionIds=['about','work','memory','dua'];
