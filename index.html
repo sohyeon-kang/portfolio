@@ -8,7 +8,7 @@
   <title>강소현 · Kang Sohyeon — From idea to service.</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20261001-copy-refined">
+  <link rel="stylesheet" href="style.css?v=20261001-section-colors">
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="script.js?v=20261001-copy-refined" defer></script>
 </head>
@@ -56,13 +56,15 @@
       <div class="project-demo" id="memory-demo">
         <a class="demo-link" href="assets/memory-demo.mp4" target="_blank" rel="noopener noreferrer">시연 영상 보기 <span aria-hidden="true">↗</span><span class="sr-only"> (새 탭)</span></a>
       </div>
+      </div>
+      <div class="case-details"><div class="wrap">
       <div class="contribution-grid"><section class="team-contribution"><span class="mini-label">팀</span><h3>종이 기록을 보관하는 모바일 웹</h3><p>4명이 기획과 프론트엔드·백엔드 개발을 나눠 진행했습니다. 문서 분석, 회상 답변, 추억 카드 저장과 서랍 조회를 연결해 모바일 웹 MVP를 만들었습니다.</p></section><section class="my-contribution"><span class="mini-label">개인</span><h3>백엔드 구현과 서비스 통합</h3><ul><li>인증·문서 분류·정보 추출, 사용자 확정값 관리</li><li>카드 저장·조회 연동, 이미지 소유권 검증과 실패 처리</li><li>AI 제목 검증, 카드 배치·표시 방식 개선</li></ul></section></div>
       <section class="problem-solving" aria-labelledby="memory-problems"><div class="problem-heading"><h3 id="memory-problems">문제와 해결</h3></div>
 <article class="problem-row"><h4><span>01</span>저장은 실패했는데, 파일은 남는 문제</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>카드 저장 중 오류가 나면 업로드한 이미지 파일이 남을 수 있었습니다.</p></div><div><span class="problem-label">해결</span><p>저장 실패 시 잔여 파일을 정리하도록 보완했습니다. 이미지 조회에는 인증·소유권 검증을 연결했습니다.</p></div></div></article><article class="problem-row"><h4><span>02</span>답변을 나열하는 AI 제목</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>회상 제목이 답변을 단순 나열해, 하나의 장면으로 읽히지 않았습니다.</p></div><div><span class="problem-label">해결</span><p>나열형 결과를 검증하고 한 차례 재생성했습니다. 재생성 후에도 부적합하면 직접 입력으로 이어지도록 구성했습니다.</p></div></div></article><article class="problem-row"><h4><span>03</span>한쪽에 몰리는 추억 카드</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>서랍에 카드가 몰리면 개별 기록을 구분하기 어려웠습니다.</p></div><div><span class="problem-label">해결</span><p>기존 카드와 멀리 떨어진 빈 위치를 우선 선택하도록 배치를 변경해, 서랍 전체에 카드를 분산했습니다.</p></div></div></article>
       </section>
       <div class="project-result"><span class="mini-label">검증 결과</span><p><strong>실제 API로 저장·조회를 확인했습니다.</strong> 당시 통합 기록 기준 백엔드 91개·프론트엔드 27개 테스트를 통과했습니다.</p></div>
       <p class="scope-note">공개 배포 전 로컬 MVP입니다. Codex를 구현·테스트에 활용했으며, 기능 범위와 수정 기준은 직접 결정했습니다.</p>
-          </div>
+      </div></div>
     </section>
 
 
@@ -77,13 +79,15 @@
         <figure><div class="project-screen"><img src="assets/DUA3.png" alt="지하철 승차·환승·출구 확인 항목과 방문 장소를 보여주는 DUA 이동 안내 화면" loading="lazy" width="576" height="1155"></div><figcaption>03 / 지하철 이동 안내</figcaption></figure>
         <p class="gallery-caption">조건 선택 → 추천 코스 → 지하철 이동 안내 · 개인 작업본</p>
       </div>
+      </div>
+      <div class="case-details"><div class="wrap">
       <div class="contribution-grid"><section class="team-contribution"><span class="mini-label">팀</span><h3>현장 조사 기반 부산 여행 서비스</h3><p>8명이 기획·답사·초기 설계를 진행했습니다. 장소와 이동 조건을 조사해 여행 코스와 지하철 동선을 함께 안내하는 흐름을 기획하고, 추천 API와 화면·지도를 연결했습니다.</p></section><section class="my-contribution"><span class="mini-label">개인</span><h3>화면 재설계와 탐색 흐름 구현</h3><ul><li>개인 작업본 dua_personal의 와이어프레임·화면 재구현</li><li>검색 조건·추천 결과·선택 코스 저장과 복원</li><li>지하철 이동 안내 화면, 지도 표시와 로딩·빈 결과·오류 화면 구현</li></ul></section></div>
       <section class="problem-solving" aria-labelledby="dua-problems"><div class="problem-heading"><p class="section-kicker">문제와 해결</p><h3 id="dua-problems">화면을 오가도 탐색이 이어지도록.</h3></div>
 <article class="problem-row"><h4><span>01</span>화면을 이동하면 사라지는 선택</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>페이지 이동·새로고침으로 조건과 코스가 초기화되면 같은 검색을 반복해야 했습니다.</p></div><div><span class="problem-label">해결</span><p>검색 조건·추천 결과·선택 코스를 sessionStorage에 저장했습니다. 이전 화면으로 돌아와도 선택한 조건과 코스를 이어서 볼 수 있도록 복원했습니다.</p></div></div></article><article class="problem-row"><h4><span>02</span>와이어프레임과 실제 화면의 차이</h4><div class="problem-pair"><div><span class="problem-label">문제</span><p>와이어프레임대로 구현한 뒤 실제 화면을 보니, 구성과 정보 배치를 다시 다듬을 필요가 있었습니다.</p></div><div><span class="problem-label">해결</span><p>여행 조건 선택 → 추천 코스 → 지하철 이동 안내 순서로 화면을 다시 구성했습니다. 각 단계에서 필요한 코스와 이동 정보를 확인하도록 배치를 수정했습니다.</p></div></div></article>
       </section>
       <div class="project-result"><span class="mini-label">구현 범위</span><p><strong>추천·비교·상세 화면과 상태 복원을 구현했습니다.</strong> 지하철 승차·환승·출구 동선 안내는 구현 중입니다.</p></div>
       <p class="scope-note">현재 지도 연결선·거리는 직선 기준이며, 실제 길찾기는 외부 카카오맵으로 연결합니다.</p>
-          </div>
+      </div></div>
     </section>
 
 
