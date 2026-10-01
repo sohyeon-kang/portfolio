@@ -43,9 +43,11 @@ h1{font:800 clamp(96px,18vw,252px)/1 var(--display);letter-spacing:-.065em;white
 .name-letter{display:inline-block;transform-origin:50% 80%;transition:color .25s ease}
 @media(hover:hover){.name-letter:hover{color:#dbeaf0}}
 .hero-headline{max-width:1060px;margin:33px auto 0;font-size:26px;font-weight:550;line-height:1.65;letter-spacing:-.04em;text-wrap:balance}
+.hero-summary{max-width:48ch;margin:14px auto 0;font-size:20px;line-height:1.75;color:var(--muted);text-wrap:balance}
 
 .hero-bottom{display:flex;justify-content:flex-end;align-items:center;gap:24px;padding:20px 56px;text-align:left;border-top:1px solid var(--line);font-size:16px}
-.scroll-cue{display:inline-flex;gap:30px;align-items:center;white-space:nowrap}
+.scroll-cue{display:inline-flex;gap:30px;align-items:center;min-height:44px;white-space:nowrap;text-underline-offset:5px}
+.scroll-cue:hover{text-decoration:underline}
 .scroll-cue b{font-size:25px;font-weight:400}
 
 /* Work first: two equal project covers, with one clear action per cover. */
@@ -194,12 +196,14 @@ figure figcaption{font-size:16px;line-height:1.6;margin-top:16px;text-align:cent
 }
 @media(max-width:767px){
  .dua-gallery{grid-template-columns:1fr;gap:32px;padding-inline:18px}
+ .memory-gallery{grid-template-columns:1fr}
  :root{--body:18px;--section-space:72px}.wrap{width:calc(100% - 40px)}html{scroll-padding-top:84px}
  .site-header{height:68px;padding-inline:20px;gap:14px}.brand{font-size:30px}.site-header nav{gap:20px}.site-header nav a{font-size:16px}.site-header nav a:last-child{display:none}
  .hero{padding-top:40px}.hero-content{width:calc(100% - 30px);padding-bottom:52px}
  h1{font-size:18.6vw;letter-spacing:-.065em}.hero-headline{font-size:22px;margin-top:27px;padding-inline:5px;line-height:1.65}
+ .hero-summary{font-size:18px;padding-inline:8px}
 
- .hero-bottom{padding:17px 20px;font-size:14px;gap:18px}.scroll-cue{font-size:0;gap:0}.scroll-cue b{font-size:24px}
+ .hero-bottom{padding:17px 20px;font-size:14px;gap:18px}.scroll-cue{font-size:16px;gap:16px}.scroll-cue b{font-size:24px}
  .section-intro{display:block;margin-bottom:35px}.section-intro>p{font-size:18px;max-width:none;margin-top:18px}#work-title{font-size:38px;line-height:1.35}.section-kicker{margin-bottom:12px}
  .work-accordion{grid-template-columns:1fr;gap:36px}.feature-link{min-height:0;padding:25px 24px 20px}.feature-top{margin-bottom:22px}.feature h3{font-size:70px}.feature-memory h3{font-size:52px}.feature-description{font-size:20px;line-height:1.65}
  .feature-media{flex:none;min-height:365px;height:365px;max-width:430px;width:100%;align-self:center;margin-top:24px}.receipt-art{width:43%;left:3%;max-width:180px}.letter-art{width:63%;right:0;top:34%;max-width:265px}
